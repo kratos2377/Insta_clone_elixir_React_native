@@ -9,12 +9,12 @@ defmodule ServerWeb.Router do
     pipe_through :api
 
     forward "/graphql", Absinthe.Plug,
-    schema: InstagramWeb.Schema
+    schema: Server.Schema
 
 
     if Mix.env == :dev do
       forward "/graphiql", Absinth.Plug.GraphiQL,
-      schema: InstagramWeb.Schema
+      schema: Server.Schema
     end
   end
 
