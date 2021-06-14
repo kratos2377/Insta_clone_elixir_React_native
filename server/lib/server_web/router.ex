@@ -9,7 +9,7 @@ defmodule ServerWeb.Router do
     pipe_through :api
 
     forward "/graphql", Absinthe.Plug,
-    schema: ServerWeb.Schema
+      schema: ServerWeb.Schema
 
 
     if Mix.env == :dev do
