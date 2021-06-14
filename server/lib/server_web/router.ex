@@ -5,16 +5,16 @@ defmodule ServerWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", ServerWeb do
+  scope "/api" do
     pipe_through :api
 
     forward "/graphql", Absinthe.Plug,
-    schema: Server.Schema
+    schema: ServerWeb.Schema
 
 
     if Mix.env == :dev do
-      forward "/graphiql", Absinth.Plug.GraphiQL,
-      schema: Server.Schema
+      forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: ServerWeb.Schema
     end
   end
 
