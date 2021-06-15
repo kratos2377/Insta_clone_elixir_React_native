@@ -20,7 +20,6 @@ const uploadImage = async (method, url, file) => {
   });
 };
 
-// image === image inside local phone
 export const uploadImageToS3 = async (image, signS3) => {
   await uploadImage('PUT', signS3.uploadUrl, {
     uri: image,
