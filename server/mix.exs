@@ -48,7 +48,8 @@ defmodule Server.MixProject do
       {:absinthe_plug, "~> 1.5"},
       {:dataloader, "~> 1.0.0"},
       {:faker, "~> 0.16.0"},
-      {:facebook, "~> 0.24.0"}
+      {:facebook, "~> 0.24.0"},
+      {:guardian, "~> 2.1"}
     ]
   end
 

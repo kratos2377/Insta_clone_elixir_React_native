@@ -1,11 +1,14 @@
 defmodule ServerWeb.Schema do
   use Absinthe.Schema
  alias ServerWeb.Resolvers
+ alias ServerWeb.Schema.Middleware
 
  import_types __MODULE__.PostsTypes
+ import_types __MODULE__.AccountsTypes
 
  query do
   field :photos, list_of(:photo) do
+    middleware Middleware.Authorize
     resolve &Resolvers.Posts.photos/3
   end
 
@@ -15,5 +18,14 @@ defmodule ServerWeb.Schema do
     resolve &Resolvers.Posts.photo/3
   end
 
+end
+
+mutation do
+  @desc "Login as a user"
+  field :login, :user_session do
+    arg :token, :string
+    arg :provider, type: :provider
+    resolve &Resolvers.Accounts.login/3
+  end
 end
 end
