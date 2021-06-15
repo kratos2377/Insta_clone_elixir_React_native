@@ -6,6 +6,7 @@ defmodule Server.Posts.Photo do
     field :caption, :string
     field :image_url, :string
 
+    has_many :likes, Server.Reaction.LikePhoto
     timestamps()
   end
 

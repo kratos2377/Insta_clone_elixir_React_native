@@ -10,6 +10,8 @@ defmodule Server.Accounts.User do
     field :last_name, :string
     field :username, :string
 
+    has_many :like_photo, Server.Reaction.LikePhoto
+
     timestamps()
   end
 
