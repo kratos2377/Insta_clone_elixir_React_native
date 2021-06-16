@@ -101,4 +101,7 @@ defmodule Server.Posts do
   def change_photo(%Photo{} = photo, attrs \\ %{}) do
     Photo.changeset(photo, attrs)
   end
+
+
+
 end

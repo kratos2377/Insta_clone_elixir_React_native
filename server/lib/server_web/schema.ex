@@ -18,6 +18,8 @@ defmodule ServerWeb.Schema do
     resolve &Resolvers.Posts.photo/3
   end
 
+
+
 end
 
 mutation do

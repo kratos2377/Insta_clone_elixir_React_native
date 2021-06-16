@@ -8,4 +8,6 @@ defmodule ServerWeb.Resolvers.Posts do
   def photo(_, %{id: id}, _) do
     {:ok, Posts.get_photo!(id)}
   end
+
+
 end

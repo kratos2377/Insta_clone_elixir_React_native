@@ -49,7 +49,8 @@ defmodule Server.MixProject do
       {:dataloader, "~> 1.0.0"},
       {:faker, "~> 0.16.0"},
       {:facebook, "~> 0.24.0"},
-      {:guardian, "~> 2.1"}
+      {:guardian, "~> 2.1"},
+      { :uuid, "~> 1.1" }
     ]
   end
 
